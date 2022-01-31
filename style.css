@@ -43,6 +43,10 @@ ul {
   padding: 0.5rem;
   border-radius: 5px;
 }
+.button:hover {
+  color: var(--dark-color);
+  transition: all 400ms linear;
+}
 header {
   display: flex;
   justify-content: space-between;
@@ -196,6 +200,35 @@ footer a:hover {
   font-size: 3.7rem;
   transition: all 400ms linear;
 }
+
+/* ABOUT ME PAGE  */
+.about-me .flex-layout {
+  display: flex;
+  flex-direction: column;
+}
+.about-me img {
+  width: 100%;
+  border-top: white 1px solid;
+  border-left: white 1px solid;
+  padding: 0.7rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+.about-me h3 {
+  font-family: var(--title-font);
+  color: var(--highlight-color);
+  font-weight: lighter;
+  margin-bottom: 1rem;
+}
+.about-me .description {
+  background-color: var(--main-bg-color);
+  max-width: 100%;
+  padding: 1rem;
+  border-radius: 7px;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
 @media screen and (min-width: 1194px) {
   .desktop-logo {
     display: block;
@@ -244,10 +277,8 @@ footer a:hover {
     margin: auto;
   }
 }
-@media screen and (width: 1024px) and (orientation: portrait),
-  screen and (width: 834px) and (orientation: portrait),
-  screen and (width: 926px) and (orientation: landscape),
-  screen and (width: 896px) and (orientation: landscape) {
+@media screen and (min-width: 810px) and (orientation: portrait),
+  screen and (min-width: 811px) and (orientation: landscape) {
   .projects-layout {
     display: flex;
     align-items: center;
@@ -266,8 +297,18 @@ footer a:hover {
     max-width: 500px;
     margin: auto;
   }
+  .about-me img {
+    width: 100%;
+    margin-right: 2rem;
+  }
+  .about-me .flex-layout {
+    flex-direction: row;
+  }
+  .about-me .description {
+    font-size: 0.8rem;
+  }
 }
-@media screen and (min-width: 1366px) {
+@media screen and (min-width: 1440px) {
   header {
     max-width: 1400px;
     margin: auto;
@@ -310,5 +351,26 @@ footer a:hover {
   .contact-section {
     padding: 4rem 3rem;
     max-width: 100%;
+  }
+
+  /* ABOUT ME PAGE  */
+  .about-me img {
+    width: 60%;
+    margin-right: 2rem;
+  }
+  .about-me .flex-layout {
+    flex-direction: row;
+  }
+  .about-me .description {
+    font-size: 1rem;
+    max-width: 70%;
+    margin-left: auto;
+    text-align: justify;
+  }
+  .about-me-text-layout {
+    text-align: end;
+  }
+  .about-me-text-layout ul {
+    justify-content: flex-end;
   }
 }
