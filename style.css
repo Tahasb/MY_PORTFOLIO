@@ -3,31 +3,31 @@
   padding: 0%;
   margin: 0%;
 }
+
 :root {
   --main-bg-color: #6b7379;
   --font-color: #ffffff;
   --highlight-color: #d7f205;
   --dark-color: #0b1014;
   --title-font: "Roboto Mono", monospace;
-  --subtitle-font: "Open Sans", sans-serif;
-  --paragraph-font: "Cabin", sans-serif;
+  --paragraph-font: "Open Sans", sans-serif;
+  /* --paragraph-font: "Cabin", sans-serif; */
   --logo-font: "Libre Baskerville", serif;
 }
 body {
   background-color: var(--main-bg-color);
   color: var(--font-color);
-  font-family: var(--subtitle-font);
+  font-family: var(--paragraph-font);
   font-weight: lighter;
 }
-/* ---------------------COMMON STYLING ---------------------*/
-section {
-  max-width: 1400px;
-  padding: 4rem 1rem 5rem 1rem;
-  margin: auto;
+a {
+  text-decoration: none;
+  color: var(--font-color);
 }
 ul {
   display: flex;
   list-style-type: none;
+  gap: 2rem;
 }
 .gradient {
   background: linear-gradient(
@@ -43,183 +43,146 @@ ul {
   padding: 0.5rem;
   border-radius: 5px;
 }
-.button:hover {
-  background-color: var(--highlight-color);
-  color: var(--main-bg-color);
-}
-a {
-  text-decoration: none;
-  color: var(--font-color);
-  font-size: 1.2rem;
-}
-a:hover {
-  color: var(--main-bg-color);
-  transition: 0.4s;
-}
-
-/*---------------------NAV BAR STYLING---------------------*/
 header {
-  background-color: var(--dark-color);
-}
-.nav-bar {
-  /*soit cette ligne pour definir le max width soit l'avant*/
-  max-width: 1400px;
-  margin: auto;
-  padding: 4rem 1rem;
-}
-.nav-bar ul {
-  flex-wrap: wrap;
-  justify-content: center;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 3rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
 }
-
-.nav-bar [class*="fa-"] {
-  font-size: 150%;
+header h1 a {
+  font-size: 2rem;
+}
+header [class*="fa-"] {
+  font-size: 170%;
   color: var(--highlight-color);
 }
-.nav-bar [class*="fa-"]:hover {
+header [class*="fa-"]:hover {
   color: var(--main-bg-color);
   transition: 0.4s;
 }
 
-.nav-bar .logo {
-  flex-basis: auto;
-  margin-right: auto;
+section {
+  padding: 4rem 3rem;
 }
-.logo h1 a {
-  font-size: 2rem;
-  font-weight: bold;
+h2 {
+  margin-bottom: 2rem;
 }
-
-.nav-bar .logo .fas {
-  font-size: 120%;
-}
-
-/*---------------------BRANDING SECTION STYLING---------------------*/
 .viewport-height {
-  height: 100vh;
   background-color: var(--dark-color);
 }
+.desktop-logo {
+  display: none;
+}
 
-.branding-styler {
-  background-color: var(--dark-color);
+/* NAV BAR STYLING */
+
+.mobile-nav-toggle {
+  background: url("https://img.icons8.com/ios-glyphs/30/ffffff/menu--v1.png");
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 9999;
+}
+.nav-bar ul {
+  flex-direction: column;
+  position: fixed;
+  background: hsl(207, 29%, 6%, 0.95);
+  inset: 0 0 0 0%;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  z-index: 1000;
+  transform: translateX(100%);
+  transition: transform 350ms ease-out;
+}
+.nav-bar[data-visible="true"] ul {
+  transform: translateX(0%);
+  transition: transform 350ms ease-out;
+}
+.mobile-nav-toggle[aria-expanded="true"] {
+  background: url("https://img.icons8.com/ios-filled/50/ffffff/delete-sign--v1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 2rem;
+}
+/* BRANDING SECTION */
+.branding-section {
+  text-align: center;
 }
 .branding-section .my-name {
   display: block;
   padding: 2rem 0;
-  font-size: 4rem;
+  font-size: 3rem;
   color: var(--highlight-color);
   font-family: var(--title-font);
 }
 .branding-section .job-title {
-  font-size: 3rem;
+  font-size: 2rem;
   padding-bottom: 2rem;
   font-family: var(--title-font);
 }
 .branding-section p {
   padding: 0.5rem 0;
-  font-size: 120%;
+  font-size: 1rem;
   font-weight: lighter;
 }
 
-/*---------------------PROJECTS SECTION STYLING---------------------*/
+/* PROJECT SECTION */
 
-.projects-section h2 {
-  font-size: 2.5rem;
+.projects-section {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0;
 }
-.project-title {
-  color: var(--highlight-color);
-  font-family: var(--title-font);
-  font-weight: lighter;
+.projects-section img {
+  width: 100%;
+  border-top: white 1px solid;
+  border-left: white 1px solid;
+  padding: 0.7rem;
+  border-radius: 10px;
 }
 .project-description-title {
-  font-family: var(--subtitle-font);
   font-weight: lighter;
+}
+.project-title {
+  font-family: var(--title-font);
+  color: var(--highlight-color);
+  font-weight: lighter;
+  margin-bottom: 1rem;
 }
 .project-description {
   background-color: var(--dark-color);
+  max-width: 100%;
   padding: 1rem;
-  max-width: 80%;
   border-radius: 7px;
-  text-align: right;
-  margin-left: auto;
-  margin-top: 1rem;
+  font-size: 0.8rem;
   margin-bottom: 1rem;
 }
-.project-technologies {
-  justify-content: flex-end;
-  gap: 1rem;
-}
-.reverted .project-technologies {
-  justify-content: flex-start;
-}
 .projects-layout {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  margin-bottom: 3rem;
 }
-.projects-text-layout {
-  text-align: right;
-  grid-column: 3/13;
-  grid-row: 1/2;
+.projects-section p:nth-of-type(2) {
+  /*Selects every <p> element that is the second <p> element of its parent */
+  font-size: 0.8rem;
 }
-
-.projects-layout img {
-  grid-column: 1/6;
-  grid-row: 1/2;
-  width: 100%;
-  margin: 2rem 0 4rem 0;
-  border-top: white 1px solid;
-  border-left: white 1px solid;
-  padding: 1rem;
-  border-radius: 10px;
-}
-.reverted img {
-  grid-column: 8/13;
-  grid-row: 1/2;
-}
-.reverted .projects-text-layout {
-  text-align: left;
-  grid-column: 1/11;
-  grid-row: 1/2;
-}
-.reverted .project-description {
-  margin-left: 0;
-  text-align: left;
-}
-/*---------------------CONTACT SECTION STYLING---------------------*/
-
-.contact-styler {
-  background-color: var(--dark-color);
-}
+/* CONTACT ME SECTION */
 .contact-section {
-  width: 400px;
-}
-.contact-section h2 {
+  background-color: var(--dark-color);
   text-align: center;
 }
 .contact-section p {
-  margin: auto;
-  text-align: center;
-  margin-top: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-/*---------------------FOTER STYLING---------------------*/
+/* FOOTER */
 footer {
-  padding: 4rem 1rem;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-}
-footer h2 {
   text-align: center;
+  padding: 4rem 3rem;
 }
 footer p {
-  text-align: center;
-  width: 440px;
-  margin: auto;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
   display: flex;
   justify-content: space-around;
 }
@@ -227,71 +190,125 @@ footer a {
   font-size: 4rem;
   color: var(--dark-color);
 }
+
 footer a:hover {
+  color: var(--highlight-color);
   font-size: 3.7rem;
-  transition: all 200ms linear;
-  color: var(--highlight-color);
+  transition: all 400ms linear;
 }
-footer small {
-  text-align: center;
-  margin: auto;
+@media screen and (min-width: 1194px) {
+  .desktop-logo {
+    display: block;
+  }
+  .mobile-logo {
+    display: none;
+  }
+  .mobile-nav-toggle {
+    display: none;
+  }
+  header {
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding: 2rem 2rem 0rem 2rem;
+    align-items: center;
+  }
+  a {
+    font-size: 1.2rem;
+  }
+  section {
+    padding-left: 7rem;
+    padding-right: 7rem;
+  }
+  .nav-bar ul {
+    flex-direction: row;
+    position: inherit;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(0%);
+    padding: 0;
+  }
+  .projects-layout {
+    display: flex;
+  }
+  .projects-text-layout {
+    margin-left: 2rem;
+    max-width: 50%;
+  }
+  .contact-section p {
+    max-width: 500px;
+    margin: auto;
+    margin-bottom: 2rem;
+  }
+  footer p {
+    max-width: 500px;
+    margin: auto;
+  }
 }
-
-/*---------------------ABOUT ME STYLING---------------------*/
-.about-viewport-height {
-  background-color: var(--dark-color);
-  height: 100%;
+@media screen and (width: 1024px) and (orientation: portrait),
+  screen and (width: 834px) and (orientation: portrait),
+  screen and (width: 926px) and (orientation: landscape),
+  screen and (width: 896px) and (orientation: landscape) {
+  .projects-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .projects-text-layout {
+    margin-left: 2rem;
+    max-width: 50%;
+  }
+  .contact-section p {
+    max-width: 500px;
+    margin: auto;
+    margin-bottom: 2rem;
+  }
+  footer p {
+    max-width: 500px;
+    margin: auto;
+  }
 }
-
-.about-me h2 {
-  font-size: 2.5rem;
-  grid-column: 1/6;
-  grid-row: 1/2;
-  width: max-content;
-}
-.grid-layout {
-  display: grid;
-}
-.about-me h3 {
-  color: var(--highlight-color);
-  font-family: var(--title-font);
-  font-weight: lighter;
-}
-.about-me img {
-  width: 50%;
-  margin: 2rem 0 4rem 0;
-  border-top: white 1px solid;
-  border-left: white 1px solid;
-  padding: 1rem;
-  border-radius: 10px;
-  grid-column: 1/6;
-  grid-row: 1/2;
-}
-
-.about-me .description {
-  background-color: var(--main-bg-color);
-  padding: 1rem;
-  border-radius: 7px;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  margin-left: auto;
-}
-
-.about-me .technologies {
-  gap: 1rem;
-  justify-content: flex-end;
-}
-.about-me-text-layout {
-  margin-top: 4rem;
-  text-align: right;
-  grid-column: 3/12;
-  grid-row: 1/2;
-}
-/*---------------------MEDIA QUERIES---------------------*/
-
-@media (max-width: 850px) {
-  .nav-bar .logo {
-    flex-basis: 100%;
-    text-align: center; /*this is what center my logo */
+@media screen and (min-width: 1366px) {
+  header {
+    max-width: 1400px;
+    margin: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  section {
+    max-width: 1400px;
+    margin: auto;
+    padding: 7rem 0 3rem 0;
+  }
+  .viewport-height {
+    height: 100vh;
+  }
+  a:hover {
+    color: var(--main-bg-color);
+    transition: 0.4s;
+  }
+  .branding-section {
+    text-align: left;
+  }
+  .branding-section .my-name {
+    display: block;
+    font-size: 4rem;
+  }
+  .branding-section .job-title {
+    font-size: 3rem;
+  }
+  .branding-section p {
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    font-weight: lighter;
+  }
+  .project-description {
+    font-size: 1rem;
+  }
+  .projects-section p:nth-of-type(2) {
+    font-size: 1rem;
+  }
+  .contact-section {
+    padding: 4rem 3rem;
+    max-width: 100%;
   }
 }

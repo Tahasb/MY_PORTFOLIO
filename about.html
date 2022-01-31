@@ -20,16 +20,22 @@
     <div class="about-viewport-height">
 
         <header>
-            <nav class="nav-bar">
+            <a class="mobile-logo" href="/index.html"><span class="fas fa-code"></span></a>
+            <h1 class="main-logo">
+                <a href="/index.html"><span class="fas fa-code"></span> Taha SBAITI</a>
+            </h1>
+            <button class="mobile-nav-toggle" aria-controls="nar-bar" aria-expanded="false"><span
+                    class="sr-only">Menu</span></button>
+            <nav class="nav-bar" data-visible='false'>
                 <ul>
-                    <li class="logo">
-                        <h1>
-                            <a href="/index.html"><span class="fas fa-code"></span> Taha SBAITI</a>
-                        </h1>
-                    </li>
+                    <!-- <li class="logo">
+                  <h1 class="main-logo">
+                    <a href="/index.html"><span class="fas fa-code"></span> Taha SBAITI</a>
+                  </h1>
+                </li> -->
                     <li><a href="/index.html#projects">Projects</a></li>
                     <li><a href="/about.html">About</a></li>
-                    <li><a href="/index.html#contact">Contact</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
                     <li>
                         <a href="https://www.linkedin.com/in/taha-sbaiti" target="_blank"><span class="fab fa-linkedin"
                                 aria-hidden="true"></span><span class="sr-only">LinkedIn</span></a>
@@ -44,7 +50,7 @@
         </header>
         <section class="about-me">
             <h2>About Me</h2>
-            <div class="grid-layout">
+            <div class="grid-layout flex-layout">
 
                 <img src="/alexander-hipp-iEEBWgY_6lA-unsplash.jpg" alt="photo of me">
 
@@ -67,8 +73,10 @@
                 </div>
             </div>
         </section>
+        <div class="gradient"></div>
+
     </div>
-    <div class="gradient"></div>
+
     <footer>
         <h2>Taha SBAITI · Full Stack Web Engineer</h2>
         <p>
@@ -79,6 +87,7 @@
         </p>
         <small>© 2021 Taha SBAITI. All rights reserved.</small>
     </footer>
+    <script src="/script.js"></script>
 </body>
 
 </html>

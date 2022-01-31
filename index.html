@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- THIS IS FOR PURPOSE EXAMPLE -->
 
 <head>
   <meta charset="UTF-8" />
@@ -20,13 +19,19 @@
   <!---==================================NAV BAR======================================= -->
   <div class="viewport-height">
     <header>
-      <nav class="nav-bar">
+      <a class="mobile-logo" href="/index.html"><span class="fas fa-code"></span></a>
+      <h1 class="desktop-logo">
+        <a href="/index.html"><span class="fas fa-code"></span> Taha SBAITI</a>
+      </h1>
+      <button class="mobile-nav-toggle" aria-controls="nav-bar" aria-expanded="false"><span
+          class="sr-only">Menu</span></button>
+      <nav id="nav-bar" class="nav-bar" data-visible='false'>
         <ul>
-          <li class="logo">
-            <h1>
+          <!-- <li class="logo">
+            <h1 class="main-logo">
               <a href="/index.html"><span class="fas fa-code"></span> Taha SBAITI</a>
             </h1>
-          </li>
+          </li> -->
           <li><a href="#projects">Projects</a></li>
           <li><a href="/about.html">About</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -48,7 +53,7 @@
 
     <section id="branding" class="branding-section">
       <p>Hi, my name is <span class="my-name">Taha SBAITI.</span></p>
-      <h1 class="job-title">A full stack web developper in the making.</h1>
+      <h2 class="job-title">A full stack web developper in the making.</h2>
       <p>
         I'm an educator specializing in HTML, CSS, user experience, and no-code
         technologies.
@@ -150,10 +155,11 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, quis. Atque quam, excepturi vel quae
         reiciendis
       </p>
-      <p><a href="" class="button">Email me</a></p>
+      <a href="" class="button">Email me</a>
     </section>
+    <div class="gradient"></div>
   </div>
-  <div class="gradient"></div>
+
 
   <footer>
     <h2>Taha SBAITI · Full Stack Web Engineer</h2>
