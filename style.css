@@ -125,7 +125,7 @@ h2 {
 }
 .branding-section .job-title {
   font-size: 2rem;
-  padding-bottom: 2rem;
+  /* padding-bottom: 2rem; */
   font-family: var(--title-font);
 }
 .branding-section p {
@@ -208,11 +208,16 @@ footer a:hover {
 }
 .about-me img {
   width: 100%;
+  height: 100%;
+  margin: auto;
   border-top: white 1px solid;
   border-left: white 1px solid;
   padding: 0.7rem;
   border-radius: 10px;
   margin-bottom: 2rem;
+}
+.about-me-text-layout {
+  width: fit-content;
 }
 .about-me h3 {
   font-family: var(--title-font);
@@ -323,12 +328,21 @@ footer a:hover {
   .viewport-height {
     height: 100vh;
   }
-  a:hover {
-    color: var(--main-bg-color);
-    transition: 0.4s;
+
+  .underline-effect::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--font-color);
+    transition: 0.3s;
+  }
+  .underline-effect:hover::after {
+    width: 100%;
   }
   .branding-section {
     text-align: left;
+    margin-top: 6rem;
   }
   .branding-section .my-name {
     display: block;
@@ -354,23 +368,33 @@ footer a:hover {
   }
 
   /* ABOUT ME PAGE  */
+  .about-me {
+    margin-top: 6rem;
+  }
   .about-me img {
     width: 60%;
     margin-right: 2rem;
+  }
+  .headshot {
+    background-image: url(/headshot.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 500px;
+
+    border-radius: 10px;
   }
   .about-me .flex-layout {
     flex-direction: row;
   }
   .about-me .description {
     font-size: 1rem;
-    max-width: 70%;
+    width: 100%;
     margin-left: auto;
     text-align: justify;
   }
   .about-me-text-layout {
-    text-align: end;
-  }
-  .about-me-text-layout ul {
-    justify-content: flex-end;
+    width: fit-content;
+    margin-left: 4rem;
   }
 }
